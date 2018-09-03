@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient">
+
+
+    <TextView
+        android:id="@+id/tvwelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:text="Please login!"
+        android:textColor="#FAFAFA"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/caviardreams"/>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tvemail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".4"
+            android:gravity="center_horizontal"
+            android:text="Email:"
+            android:textColor="#FAFAFA  "
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/caviardreams"/>
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:hint=" Enter your email"
+
+            android:textSize="15dp"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/caviardreams"
+            />
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tvpassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".4"
+            android:gravity="center_horizontal"
+            android:text="Password:"
+            android:textColor="#FAFAFA  "
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/caviardreams"/>
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:textSize="15dp"
+            android:hint=" Enter your password"
+            android:inputType="textPassword"
+            android:fontFamily="@font/caviardreams"/>
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:fontFamily="@font/caviardreams"
+        android:background="#0b8793"
+        android:textColor="#FFFFFF"
+        android:text="Login"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tvsignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:textColor="#FAFAFA"
+        android:text="Don't have an account?"
+        android:textStyle="bold"
+        android:fontFamily="@font/caviardreams"
+        />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btn_signUp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:text="SignUp"
+            android:singleLine="false"
+            android:fontFamily="@font/caviardreams"
+            android:textAllCaps="false"
+            android:background="#0b8793"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</LinearLayout>

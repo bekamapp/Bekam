@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Bekam</string>
+
+    <string-array name="category_array">
+        <item>Cars</item>
+        <item>Clothes</item>
+        <item>Anything</item>
+        <item>Anything</item>
+        <item>Anything</item>
+        <item>Anything</item>
+    </string-array>
+
+    <string name="signup_customer">Sign Up as\nCustomer</string>
+    <string name="signup_vendor">Sign Up as\nVendor</string>
+</resources>

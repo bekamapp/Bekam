@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:maxHeight="200dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_product"
+            android:paddingTop="8dp"/>
+
+        <!--Choose image and upload-->
+        <LinearLayout
+            android:id="@+id/layout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/btnChoose"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Choose" />
+
+            <Button
+                android:id="@+id/btnUpload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Upload" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+
+            <EditText
+                android:id="@+id/et_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/caviardreams"/>
+            <EditText
+                android:id="@+id/et_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:hint="Price"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/caviardreams"/>
+
+            <EditText
+                android:id="@+id/et_product_des"
+                android:layout_width ="match_parent"
+                android:layout_height ="wrap_content"
+                android:layout_weight ="1"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLines ="4"
+                android:maxLength ="2000"
+                android:hint ="Description"
+                android:scrollHorizontally="false"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/caviardreams"
+            />
+
+            <Button
+                android:id="@+id/btn_product_add"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_weight="1"
+                android:background="#2E86C1"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:text="ADD"
+                android:fontFamily="@font/caviardreams"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                tools:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

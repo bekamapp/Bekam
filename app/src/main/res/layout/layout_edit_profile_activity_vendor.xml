@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:background="@drawable/background_gradient"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_gradient"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/et_edit_vendor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textColor="#FAFAFA"
+            android:fontFamily="@font/caviardreams"/>
+
+        <EditText
+            android:id="@+id/et_edit_vendor_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            android:ems="10"
+            android:hint="Phone"
+            android:inputType="phone"
+            android:textColor="#FAFAFA"
+            android:fontFamily="@font/caviardreams"/>
+
+
+        <EditText
+            android:id="@+id/et_edit_vendor_loc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="text"
+            android:textColor="#FAFAFA"
+            android:fontFamily="@font/caviardreams"/>
+
+        <!-- Working Hours -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Working Hours"
+                android:textColor="#FAFAFA"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/caviardreams"/>
+            <!-- First Row: WH + Hours-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="horizontal">
+
+
+                <!-- Drop down menus-->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight=".2"
+                    android:layout_height="wrap_content"
+                    android:text="From"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/caviardreams"/>
+                <Spinner
+                    android:id="@+id/spinner_edit_vendor_WH_From"
+                    android:layout_width="0dp"
+                    android:layout_weight=".3"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    />
+                <!--android:background="@android:drawable/btn_dropdown"-->
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight=".2"
+                    android:layout_height="wrap_content"
+                    android:text="To"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/caviardreams"/>
+                <Spinner
+                    android:id="@+id/spinner_edit_vendor_WH_To"
+                    android:layout_width="0dp"
+                    android:layout_weight=".3"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"/>
+
+
+            </LinearLayout>
+
+            <!-- Second Row: Days-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <CheckBox
+                    android:id="@+id/checkbox_edit_vendor_sat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sat"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/caviardreams"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_edit_vendor_sun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sun"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/caviardreams"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_edit_vendor_mon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mon"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/caviardreams"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_edit_vendor_tue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tue"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/caviardreams"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_edit_vendor_wed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wed"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/caviardreams"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <CheckBox
+                    android:id="@+id/checkbox_edit_vendor_thurs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thurs"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/caviardreams"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_edit_vendor_fri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/caviardreams"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Categories-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="37dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight=".4"
+                    android:ems="10"
+                    android:text="Category"
+                    android:textColor="#FAFAFA"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/caviardreams"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/et_edit_vendor_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginVertical="10dp"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="#FAFAFA"
+                        android:fontFamily="@font/caviardreams"
+                        android:enabled="false"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_vendor_applyChanges"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            android:background="#0b8793"
+            android:clickable="true"
+            android:fontFamily="@font/caviardreams"
+            android:text="Apply Changes"
+            android:textColor="#FAFAFA"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</ScrollView>
+

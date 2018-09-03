@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "828493265004",
+    "firebase_url": "https://bekamapp-d9184.firebaseio.com",
+    "project_id": "bekamapp-d9184",
+    "storage_bucket": "bekamapp-d9184.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828493265004:android:6d9d20bd7ffcbc39",
+        "android_client_info": {
+          "package_name": "com.bekamapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828493265004-0p8qplmlt093lsc23rkg87kf8ndecjfn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBq_GE7o80u3itCIjda4KrgIhhyZp7t4vA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
