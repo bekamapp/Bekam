@@ -12,4 +12,5 @@
 
     <string name="signup_customer">Sign Up as\nCustomer</string>
     <string name="signup_vendor">Sign Up as\nVendor</string>
+    <string name="headline1">product</string>
 </resources>

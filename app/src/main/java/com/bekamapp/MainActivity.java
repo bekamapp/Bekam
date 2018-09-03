@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.ListView;
 
-import com.bekamapp.User.ItemDetailsActivity;
-import com.bekamapp.User.MyProfileActivityUser;
 import com.bekamapp.Vendor.MyProfileActivityVendor;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     ImageButton logout, home, account;
-    Button cat5;
-    
+    private ListView listViewCategories;
+    private List<Category> categories;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +34,15 @@ public class MainActivity extends AppCompatActivity {
         logout = findViewById(R.id.btn_logout);
         home = findViewById(R.id.btn_home);
         account = findViewById(R.id.btn_account);
-        cat5 = findViewById(R.id.btn_cat5);
+
+        categories = new ArrayList<Category>();
+        categories.add(new Category("c01", "Electronics and Home supplies", R.drawable.ic_electronics, BigDecimal.valueOf(100)));
+        categories.add(new Category("c02", "Fashion", R.drawable.ic_fashion, BigDecimal.valueOf(100)));
+        categories.add(new Category("c03", "Cars", R.drawable.ic_cars, BigDecimal.valueOf(100)));
+
+
+        listViewCategories = (ListView) findViewById(R.id.listviewCategory);
+        listViewCategories.setAdapter(new CategoryListAdapter(MainActivity.this, categories));
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,11 +67,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cat5.setOnClickListener(new View.OnClickListener() {
+        listViewCategories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), ItemDetailsActivity.class));
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Category category = categories.get(i);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("value", category);
+
+                //Open Items of certain categories
+                Intent intent = new Intent(MainActivity.this, ItemsActivity.class);
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
+
     }
 }

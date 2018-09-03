@@ -49,7 +49,7 @@ public class MyProfileActivityVendor extends AppCompatActivity {
                         startActivity(new Intent(MyProfileActivityVendor.this, MyProductsActivity.class));
                         break;
                     case 2:
-                        startActivity(new Intent(MyProfileActivityVendor.this, MyProductsActivity.class)); //hn3'er el profile elly hytft7,, ana 3mlah dlw2ty ay 7aga
+                        startActivity(new Intent(MyProfileActivityVendor.this, EditProfileActivityVendor.class)); //hn3'er el profile elly hytft7,, ana 3mlah dlw2ty ay 7aga
                         break;
                     case 3:
                         auth = FirebaseAuth.getInstance();

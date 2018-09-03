@@ -11,20 +11,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/caviardreams"
+            android:gravity="center"
             android:text="Product Details"
             android:textColor="#455A64"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:fontFamily="@font/caviardreams"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="25dp"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/iv_product"
@@ -56,23 +55,23 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight=".3333"
+                android:fontFamily="@font/caviardreams"
                 android:inputType="textPersonName"
                 android:text="Name:"
                 android:textColor="#455A64"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_product_name"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
-                android:layout_weight=".6666"
-
-                android:inputType="textPersonName"
-                android:text="Initial name"
                 android:layout_marginRight="5dp"
-                android:fontFamily="@font/caviardreams"/>
+
+                android:layout_weight=".6666"
+                android:fontFamily="@font/caviardreams"
+                android:inputType="textPersonName"
+                android:text="Initial name" />
 
 
         </LinearLayout>
@@ -94,26 +93,27 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight=".3333"
-                android:textColor="#455A64"
+                android:fontFamily="@font/caviardreams"
                 android:inputType="textPersonName"
                 android:text="Price:"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"/>
+                android:textColor="#455A64"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_product_price"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
-                android:layout_weight=".6666"
-
-                android:inputType="number"
-                android:text="Initial price"
                 android:layout_marginRight="5dp"
-                android:fontFamily="@font/caviardreams"/>
+
+                android:layout_weight=".6666"
+                android:fontFamily="@font/caviardreams"
+                android:inputType="number"
+                android:text="Initial price" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="302dp"
             android:layout_height="wrap_content"
@@ -131,30 +131,30 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight=".3333"
-                android:textColor="#455A64"
+                android:fontFamily="@font/caviardreams"
                 android:inputType="textPersonName"
                 android:text="Description:"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"/>
+                android:textColor="#455A64"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_product_des"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight=".6666"
-                android:inputType="textCapSentences|textMultiLine"
-                android:maxLines ="4"
-                android:maxLength ="2000"
-                android:hint ="Description"
-                android:scrollHorizontally="false"
                 android:fontFamily="@font/caviardreams"
-                android:text="Initial des"
-                android:layout_marginRight="5dp"/>
-
+                android:hint="Description"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="2000"
+                android:maxLines="4"
+                android:scrollHorizontally="false"
+                android:text="Initial des" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="302dp"
             android:layout_height="wrap_content"
@@ -172,25 +172,26 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight=".3333"
-                android:textColor="#455A64"
+                android:fontFamily="@font/caviardreams"
                 android:inputType="textPersonName"
                 android:text="Vendor:"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"/>
+                android:textColor="#455A64"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_product_ven"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
-                android:layout_weight=".6666"
-                android:inputType="textUri"
-                android:text="Vendor name"
                 android:layout_marginRight="5dp"
-                android:fontFamily="@font/caviardreams"/>
+                android:layout_weight=".6666"
+                android:fontFamily="@font/caviardreams"
+                android:inputType="textUri"
+                android:text="Vendor name" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="302dp"
             android:layout_height="wrap_content"
@@ -208,11 +209,11 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight=".3333"
-                android:textColor="#455A64"
+                android:fontFamily="@font/caviardreams"
                 android:inputType="textPersonName"
                 android:text="Location:"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"/>
+                android:textColor="#455A64"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_product_loc"
@@ -220,10 +221,62 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
                 android:layout_weight=".6666"
+                android:fontFamily="@font/caviardreams"
                 android:inputType="textPersonName"
-                android:text="Initial location"
-                android:fontFamily="@font/caviardreams"/>
+                android:text="Initial location" />
 
+
+        </LinearLayout>
+
+
+        -
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/caviardreams"
+                android:text="Reviews"
+                android:textColor="#2E86C1"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/lv_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"></ListView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/caviardreams"
+                android:hint="Write your review..."
+                android:paddingVertical="20dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#2E86C1"
+                android:fontFamily="@font/caviardreams"
+                android:text="Add Review"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </LinearLayout>

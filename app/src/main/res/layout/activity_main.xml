@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <!-- Header aligned to top -->
 
@@ -11,26 +11,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="@drawable/background_gradient"
-        android:gravity="right" >
+        android:gravity="right">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_searchbar"
-            android:textColor="#FAFAFA"
+            android:fontFamily="@font/caviardreams"
             android:hint="Search"
-            android:fontFamily="@font/caviardreams"/>
+            android:textColor="#FAFAFA"/>
     </RelativeLayout>
 
     <!-- Header aligned to bottom -->
-
     <LinearLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/background_gradient"
-        android:weightSum="3" >
+        android:weightSum="3">
 
         <ImageButton
             android:id="@+id/btn_account"
@@ -59,94 +58,20 @@
             android:background="@null"
             android:src="@drawable/ic_logout" />
     </LinearLayout>
-    <!-- TbleLayout aligned to centre -->
 
     <!--CATEGORIES-->
-    <TableLayout
-        android:id="@+id/tl_cat"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerInParent="true" >
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
-        <TableRow
-            android:id="@+id/tr_one"
+        <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/listviewCategory"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/btn_cat1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/ic_user"
-                android:text="Electronics"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"
-                />
-
-            <Button
-                android:id="@+id/btn_cat2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/ic_user"
-                android:text="Cars"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"/>
-
-            <Button
-                android:id="@+id/btn_cat3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/ic_user"
-                android:text="Fashion"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"/>
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tr_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/btn_cat4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/ic_user"
-                android:text="Shoes"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"/>
-
-            <Button
-                android:id="@+id/btn_cat5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/ic_user"
-                android:text="Mobiles"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams" />
-
-            <Button
-                android:id="@+id/btn_cat6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/ic_user"
-                android:text="Books"
-                android:textStyle="bold"
-                android:fontFamily="@font/caviardreams"/>
-        </TableRow>
-    </TableLayout>
-
+            android:layout_height="300dp"
+            android:scrollbars="vertical"
+            tools:context=".MainActivity"/>
+    </LinearLayout>
 </RelativeLayout>
