@@ -39,8 +39,8 @@ public class VendorInfoActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     VendorDataFirebase vendor;
     Button register;
-    EditText name, phone, location, workingHours;
-    CheckBox cat1, cat2, cat3, cat4, cat5, cat6, sat, sun, mon, tue, wed, thurs, fri;
+    EditText name, phone, location;
+    CheckBox sat, sun, mon, tue, wed, thurs, fri;
 
 
     @Override
@@ -66,7 +66,7 @@ public class VendorInfoActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("VendorData");
+        reference = database.getReference("Data");
         vendor = new VendorDataFirebase();
 
         //Working Hours
@@ -75,7 +75,7 @@ public class VendorInfoActivity extends AppCompatActivity {
         Spinner dropdownFrom = findViewById(R.id.spinner_WH_From);
         Spinner dropdownTo = findViewById(R.id.spinner_WH_To);
         //create a list of items for the spinner.
-        String[] items = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "00"};
+        String[] items = new String[]{"8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "00", "1", "2", "3", "4", "5", "6", "7"};
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         //set the spinners adapter to the previously created one.
@@ -142,6 +142,7 @@ public class VendorInfoActivity extends AppCompatActivity {
 
                 //To add data to database
                 Toast.makeText(getBaseContext(), "Created user: " + firebaseUser.getUid(), Toast.LENGTH_LONG).show();
+                vendor.setID(1);
                 vendor.setName(vendor_name);
                 vendor.setPhone(vendor_phone);
                 vendor.setLocation(vendor_location);

@@ -9,8 +9,17 @@ import java.util.List;
 public class VendorDataFirebase {
     private String name, phone, location, category;
     private WorkingHours workingHours;
-
+    private int ID;
     private List<Item> items;
+
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
     public String getName() {
         return name;

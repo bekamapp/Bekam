@@ -9,15 +9,27 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.bekamapp.User.UserDataFirebase;
 import com.bekamapp.Vendor.VendorInfoActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SignUpActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
+
+    FirebaseDatabase database;
+    DatabaseReference reference;
+    FirebaseUser firebaseUser;
+    UserDataFirebase user;
     Button signUp_vendor, signUp_user;
     EditText email, password;
 
@@ -45,6 +57,11 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                            database = FirebaseDatabase.getInstance();
+                            reference = database.getReference("Data");
+                            UserDataFirebase user = new UserDataFirebase(0);
+                            reference.child(firebaseUser.getUid()).setValue(user);
                             startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                         }
                         else{
@@ -64,7 +81,7 @@ public class SignUpActivity extends AppCompatActivity {
                 auth.createUserWithEmailAndPassword(vendor_email, vendor_password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if(task.isSuccessful()) {
                             startActivity(new Intent(SignUpActivity.this, VendorInfoActivity.class));
                         }
                         else{

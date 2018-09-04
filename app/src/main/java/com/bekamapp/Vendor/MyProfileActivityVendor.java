@@ -24,11 +24,11 @@ public class MyProfileActivityVendor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //If not logged in.
-        auth = FirebaseAuth.getInstance();
-        if (auth.getCurrentUser() == null) {
-            startActivity(new Intent(MyProfileActivityVendor.this, LoginActivity.class));
-            finish();
-        }
+//        auth = FirebaseAuth.getInstance();
+//        if (auth.getCurrentUser() == null) {
+//            startActivity(new Intent(MyProfileActivityVendor.this, LoginActivity.class));
+//            finish();
+//        }
 
         setContentView(R.layout.layout_my_profile_activity_vendor);
 
