@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\You++\\Courses\\NTI\\App V3\\BekamApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "C:\\Users\\DELL\\Desktop\\Java\\App V4 Wednesday Morning\\BekamApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Maram Elwakeel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\8e8c4b6f1d06c934307789ff2a2d2d37\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\a5a7bd6f4c8cae1cf8cb35c6896e9059\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

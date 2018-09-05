@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     ImageButton logout, home, account;
+    Button search;
+    EditText searchValue;
+
     private ListView listViewCategories;
     private List<Category> categories;
 
@@ -42,9 +47,12 @@ public class MainActivity extends AppCompatActivity {
         logout = findViewById(R.id.btn_logout);
         home = findViewById(R.id.btn_home);
         account = findViewById(R.id.btn_account);
+        search = findViewById(R.id.btn_search);
+        searchValue = findViewById(R.id.et_searchValue);
+
 
         categories = new ArrayList<Category>();
-        categories.add(new Category("c01", "Electronics and Home supplies", R.drawable.ic_electronics, BigDecimal.valueOf(100)));
+        categories.add(new Category("c01", "Home Supplies and Electronics", R.drawable.ic_electronics, BigDecimal.valueOf(100)));
         categories.add(new Category("c02", "Fashion", R.drawable.ic_fashion, BigDecimal.valueOf(100)));
         categories.add(new Category("c03", "Cars", R.drawable.ic_cars, BigDecimal.valueOf(100)));
 
@@ -76,8 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 if (auth.getCurrentUser() == null) {
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     finish();
-                }
-                else {
+                } else {
                     //Get reference to database, to check if it's a vendor or user, to open his account
                     firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                     database = FirebaseDatabase.getInstance();
@@ -86,19 +93,18 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             String id = dataSnapshot.child("id").getValue().toString();
-                            Toast.makeText(MainActivity.this, id, Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(MainActivity.this, id, Toast.LENGTH_SHORT).show();
 
                             //ID = 1 -> Vendor
                             if (id.equals("1")) {
-                                Toast.makeText(MainActivity.this, "Vendor", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(MainActivity.this, "Vendor", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getBaseContext(), MyProfileActivityVendor.class));
                             }
                             //ID = 0 -> User
                             else if (id.equals("0")) {
-                                Toast.makeText(MainActivity.this, "USER", Toast.LENGTH_SHORT).show();
+                                // Toast.makeText(MainActivity.this, "USER", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getBaseContext(), MyProfileActivityUser.class));
-                            }
-                            else
+                            } else
                                 Toast.makeText(MainActivity.this, "7aga Tanya!   " + dataSnapshot.child("id").getValue().toString(), Toast.LENGTH_SHORT).show();
                         }
 
@@ -111,17 +117,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = searchValue.getText().toString();
+                if(!text.equals("")) {
+                    Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                    intent.putExtra("searchValue", text);
+                    startActivity(intent);
+                }
+            }
+        });
+
         listViewCategories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Category category = categories.get(i);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("value", category);
-
                 //Open Items of certain categories
                 Intent intent = new Intent(MainActivity.this, ItemsActivity.class);
-                intent.putExtras(bundle);
-
+                intent.putExtra("Category", categories.get(i));
                 startActivity(intent);
             }
         });

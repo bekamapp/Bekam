@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_user"
+        android:src="@drawable/ic_loading"
 
         />
 
@@ -29,23 +29,27 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="name"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/caviardreams"
+                android:textStyle="bold"/>
             <TextView
                 android:id="@+id/tv_category_item_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="price"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/caviardreams"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/iv_category_item_option"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"
-            android:src="@drawable/ic_dots" />
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_category_item_option"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight=".1"-->
+            <!--android:src="@drawable/ic_dots" />-->
     </LinearLayout>
 
 

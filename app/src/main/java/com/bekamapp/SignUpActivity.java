@@ -52,23 +52,23 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String user_email = email.getText().toString().trim();
                 String user_password = password.getText().toString().trim();
-
-                auth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                            database = FirebaseDatabase.getInstance();
-                            reference = database.getReference("Data");
-                            UserDataFirebase user = new UserDataFirebase(0);
-                            reference.child(firebaseUser.getUid()).setValue(user);
-                            startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                if(!user_email.equals("") && !user_password.equals("")) {
+                    auth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                                database = FirebaseDatabase.getInstance();
+                                reference = database.getReference("Data");
+                                UserDataFirebase user = new UserDataFirebase(0);
+                                reference.child(firebaseUser.getUid()).setValue(user);
+                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                            } else {
+                                Toast.makeText(getBaseContext(), "Authentication Fail.", Toast.LENGTH_LONG).show();
+                            }
                         }
-                        else{
-                            Toast.makeText(getBaseContext(), "Authentication Fail.", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
+                    });
+                }
             }
         });
 
@@ -77,19 +77,20 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String vendor_email = email.getText().toString().trim();
                 String vendor_password = password.getText().toString().trim();
-
-                auth.createUserWithEmailAndPassword(vendor_email, vendor_password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()) {
-                            startActivity(new Intent(SignUpActivity.this, VendorInfoActivity.class));
+                if (!vendor_email.equals("") && !vendor_password.equals("")) {
+                    auth.createUserWithEmailAndPassword(vendor_email, vendor_password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                startActivity(new Intent(SignUpActivity.this, VendorInfoActivity.class));
+                            } else {
+                                Toast.makeText(getBaseContext(), "Authentication Fail.", Toast.LENGTH_LONG).show();
+                            }
                         }
-                        else{
-                            Toast.makeText(getBaseContext(), "Authentication Fail.", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
+                    });
+                }
             }
         });
+
     }
 }

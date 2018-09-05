@@ -1,4 +1,4 @@
-#Mon Sep 03 21:32:46 EET 2018
-base.0=D\:\\You++\\Courses\\NTI\\App V3\\BekamApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+#Wed Sep 05 11:03:08 EET 2018
+base.0=C\:\\Users\\DELL\\Desktop\\Java\\App V4 Wednesday Morning\\BekamApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
 path.0=classes.dex
 renamed.0=classes.dex

@@ -39,14 +39,28 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Choose" />
+                android:text="Choose"
+                android:background="#2E86C1"
+                android:fontFamily="@font/caviardreams"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                />
 
             <Button
                 android:id="@+id/btnUpload"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Upload" />
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Upload"
+                android:background="#2E86C1"
+                android:fontFamily="@font/caviardreams"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                />
 
         </LinearLayout>
 
@@ -94,7 +108,7 @@
                 android:gravity="center"
                 android:layout_marginHorizontal="5dp"
                 android:fontFamily="@font/caviardreams"
-            />
+                />
 
             <Button
                 android:id="@+id/btn_product_add"

@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\You++\\Courses\\NTI\\App V3\\BekamApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+            "outputFile": "C:\\Users\\DELL\\Desktop\\Java\\App V4 Wednesday Morning\\BekamApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Maram Elwakeel\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\fe3849be42eb7f6941eac03defcb274b\\res\\values-uz\\values-uz.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4684",
-                        "endColumns": "100",
-                        "endOffsets": "4780"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Maram Elwakeel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\8e8c4b6f1d06c934307789ff2a2d2d37\\res\\values-uz\\values-uz.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,314,428,514,614,730,810,889,973,1082,1189,1290,1398,1503,1610,1771,1870",
-                        "endColumns": "104,103,113,85,99,115,79,78,83,108,106,100,107,104,106,160,98,83",
-                        "endOffsets": "205,309,423,509,609,725,805,884,968,1077,1184,1285,1393,1498,1605,1766,1865,1949"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,314,428,514,614,730,810,889,973,1082,1189,1290,1398,1503,1610,1771,4600",
-                        "endColumns": "104,103,113,85,99,115,79,78,83,108,106,100,107,104,106,160,98,83",
-                        "endOffsets": "205,309,423,509,609,725,805,884,968,1077,1184,1285,1393,1498,1605,1766,1865,4679"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Maram Elwakeel\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\65baa940bff37de96ca71971d667725e\\res\\values-uz\\values.xml",
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\71ed835f14997366502e8cb9e810705e\\res\\values-uz\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Maram Elwakeel\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\1b27992551a1927177d6dfba9c9fa2c9\\res\\values-uz\\values.xml",
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\7159f9a307eea7c23d01c1f48dfb6143\\res\\values-uz\\values-uz.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4684",
+                        "endColumns": "100",
+                        "endOffsets": "4780"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\2a1966d74e3a3c40fe30791096a3cc0e\\res\\values-uz\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -69,6 +52,23 @@
                         "startOffsets": "3025",
                         "endColumns": "208",
                         "endOffsets": "3229"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\a5a7bd6f4c8cae1cf8cb35c6896e9059\\res\\values-uz\\values-uz.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,314,428,514,614,730,810,889,973,1082,1189,1290,1398,1503,1610,1771,1870",
+                        "endColumns": "104,103,113,85,99,115,79,78,83,108,106,100,107,104,106,160,98,83",
+                        "endOffsets": "205,309,423,509,609,725,805,884,968,1077,1184,1285,1393,1498,1605,1766,1865,1949"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,314,428,514,614,730,810,889,973,1082,1189,1290,1398,1503,1610,1771,4600",
+                        "endColumns": "104,103,113,85,99,115,79,78,83,108,106,100,107,104,106,160,98,83",
+                        "endOffsets": "205,309,423,509,609,725,805,884,968,1077,1184,1285,1393,1498,1605,1766,1865,4679"
                     }
                 }
             ]

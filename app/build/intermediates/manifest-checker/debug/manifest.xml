@@ -52,6 +52,7 @@
         <activity android:name="com.bekamapp.User.EditProfileActivityUser" />
         <activity android:name="com.bekamapp.Vendor.EditProfileActivityVendor" />
         <activity android:name="com.bekamapp.ItemsActivity" />
+        <activity android:name="com.bekamapp.SearchActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

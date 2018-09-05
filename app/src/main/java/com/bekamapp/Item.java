@@ -1,7 +1,21 @@
 package com.bekamapp;
 
-public class Item {
-    String name, price, description, image;
+import java.io.Serializable;
+
+public class Item implements Serializable{
+    String name;
+    String price;
+    String description;
+
+    public String getImage() {
+        return image;
+    }
+
+    String image;
+
+    public Item(){
+
+    }
 
     public Item(String name, String price, String description, String image) {
         this.name = name;

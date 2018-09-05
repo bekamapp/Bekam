@@ -87,7 +87,7 @@ public class AddProductActivity extends AppCompatActivity {
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("VendorData");
+        reference = database.getReference("Data");
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
 
@@ -104,8 +104,8 @@ public class AddProductActivity extends AppCompatActivity {
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (filePath != null) {
+                    Toast.makeText(AddProductActivity.this, "Uploading image.. Please wait.", Toast.LENGTH_SHORT).show();
                     StorageReference itemReference = storageReference.child(firebaseUser.getUid()).child(UUID.randomUUID().toString());
 
                     itemReference.putFile(filePath)
@@ -138,9 +138,12 @@ public class AddProductActivity extends AppCompatActivity {
                 String itemPrice = price.getText().toString().trim();
                 String itemDescription = desciption.getText().toString().trim();
                 String itemImage = path;
-                Item item = new Item(itemName, itemPrice, itemDescription, itemImage);
-                reference.child(firebaseUser.getUid()).child("Items").push().setValue(item);
-                startActivity(new Intent(AddProductActivity.this, MyProductsActivity.class));
+
+                if (!itemName.equals("") && !itemPrice.equals("") && !itemDescription.equals("") && !itemImage.equals("")) {
+                    Item item = new Item(itemName, itemPrice, itemDescription, itemImage);
+                    reference.child(firebaseUser.getUid()).child("Items").push().setValue(item);
+                    startActivity(new Intent(AddProductActivity.this, MyProductsActivity.class));
+                }
             }
         });
     }

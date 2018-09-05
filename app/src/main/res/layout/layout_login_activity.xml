@@ -50,7 +50,8 @@
             android:layout_height="wrap_content"
             android:layout_weight=".6"
             android:hint=" Enter your email"
-
+            android:textColor="#FAFAFA"
+            android:textColorHint="#FAFAFA"
             android:textSize="15dp"
             android:inputType="textEmailAddress"
             android:fontFamily="@font/caviardreams"
@@ -86,7 +87,9 @@
             android:textSize="15dp"
             android:hint=" Enter your password"
             android:inputType="textPassword"
-            android:fontFamily="@font/caviardreams"/>
+            android:fontFamily="@font/caviardreams"
+            android:textColor="#FAFAFA"
+            android:textColorHint="#FAFAFA"/>
 
 
     </LinearLayout>

@@ -1,6 +1,7 @@
 package com.bekamapp;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,18 +10,29 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bekamapp.User.ItemDetailsActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ItemsActivity extends AppCompatActivity {
+public class ItemsActivity extends AppCompatActivity{
+
+    FirebaseDatabase database;
+    DatabaseReference reference;
+//    FirebaseUser firebaseUser;
+    ArrayList<Item> itemsList;
+
     ListView LVCategoryIteMs;
     CategoryItemsAdapter CategoryItemsAdapter;
     private TextView TV_Category_item_NAME;
     private String ItemCategoryNAMES;
 
-    // String basiCategoryName=getIntent().getExtraString("Basic_Category_name");
-
-    String basiCategoryName = "Fashion";
+    String categoryName;
 
     ArrayList<CategoryItemsDetails> CategoryItemsList = new ArrayList<CategoryItemsDetails>();
 
@@ -29,41 +41,93 @@ public class ItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_items_activity);
 
-        LVCategoryIteMs = (ListView) findViewById(R.id.lvp);
+        Category category = (Category) getIntent().getSerializableExtra("Category");
 
+//        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("Data");
+        itemsList = new ArrayList<Item>();
 
-        // here we shoule add the data from data base to CategoryItemsList;
-        //
-        switch (basiCategoryName) {
-            case "Electronics and Home supplies":
-                CategoryItemsDetails a = new CategoryItemsDetails("mobile", 10, R.drawable.ic_electronics);
-                CategoryItemsList.add(a);
-
-                a = new CategoryItemsDetails("iphone", 20, R.drawable.ic_electronics);
-                CategoryItemsList.add(a);
-
-                break;
-            case "Fashion":
-                CategoryItemsDetails b = new CategoryItemsDetails("mobile", 10, R.drawable.ic_shoes);
-                CategoryItemsList.add(b);
-
-                b = new CategoryItemsDetails("iphone", 20, R.drawable.ic_shoes);
-                CategoryItemsList.add(b);
-                break;
-
+        switch (category.getName()) {
             case "Cars":
-                CategoryItemsDetails c = new CategoryItemsDetails("mobile", 10, R.drawable.ic_cars);
-                CategoryItemsList.add(c);
+                reference.addValueEventListener(new ValueEventListener() { //Table "Data"
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot ds_user : dataSnapshot.getChildren()) { //All users
+                            //If vendor and category = Cars
+                            if (ds_user.child("id").getValue().toString().equals("1") && ds_user.child("category").getValue(String.class).equals("Cars")) {
+                                for (DataSnapshot ds_items : ds_user.child("Items").getChildren()) { //Get items of category cars
+                                    Item item = ds_items.getValue(Item.class);
+                                    itemsList.add(item);
+                                }
+                            }
+                        }
+                        setView();
+//                        Toast.makeText(ItemsActivity.this, "Size: " + itemsList.size() + "\n" + itemsList.get(0).getDescription(), Toast.LENGTH_SHORT).show();
+                    }
 
-                c = new CategoryItemsDetails("iphone", 20, R.drawable.ic_cars);
-                CategoryItemsList.add(c);
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+                break;
+
+            case "Fashion":
+                reference.addValueEventListener(new ValueEventListener() { //Table "Data"
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot ds_user : dataSnapshot.getChildren()) { //All users
+                            //If vendor and category = Cars
+                            if (ds_user.child("id").getValue().toString().equals("1") && ds_user.child("category").getValue(String.class).equals("Fashion")) {
+                                for (DataSnapshot ds_items : ds_user.child("Items").getChildren()) { //Get items of category Fashion
+                                    Item item = ds_items.getValue(Item.class);
+                                    itemsList.add(item);
+                                }
+                            }
+                        }
+                        setView();
+//                        Toast.makeText(ItemsActivity.this, "Size: " + itemsList.size() + "\n" + itemsList.get(0).getDescription(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+                break;
+
+            case "Home Supplies and Electronics":
+                reference.addValueEventListener(new ValueEventListener() { //Table "Data"
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot ds_user : dataSnapshot.getChildren()) { //All users
+                            //If vendor and category = Cars
+                            if (ds_user.child("id").getValue().toString().equals("1") && ds_user.child("category").getValue(String.class).equals("Home Supplies and Electronics")) {
+                                for (DataSnapshot ds_items : ds_user.child("Items").getChildren()) { //Get items of category Electronics
+                                    Item item = ds_items.getValue(Item.class);
+                                    itemsList.add(item);
+                                }
+                            }
+                        }
+                        setView();
+//                        Toast.makeText(ItemsActivity.this, "Size: " + itemsList.size() + "\n" + itemsList.get(0).getDescription(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
                 break;
 
         }
-        //------------------------------------------
-
-        CategoryItemsAdapter = new CategoryItemsAdapter(this, CategoryItemsList);
+    }
+    private void setView() {
+        LVCategoryIteMs = (ListView) findViewById(R.id.lvp);
+        CategoryItemsAdapter = new CategoryItemsAdapter(this, itemsList);
         LVCategoryIteMs.setAdapter(CategoryItemsAdapter);
+
 
         LVCategoryIteMs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -71,12 +135,10 @@ public class ItemsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
                 TV_Category_item_NAME = (TextView) view.findViewById(R.id.tv_category_item_name);
                 ItemCategoryNAMES = TV_Category_item_NAME.getText().toString();
-                Intent i = new Intent(ItemsActivity.this, ItemDetailsActivity.class);
-                i.putExtra("ItemID", ItemCategoryNAMES);
-                startActivity(i);
+                Intent intent = new Intent(ItemsActivity.this, ItemDetailsActivity.class);
+                intent.putExtra("Item", itemsList.get(position));
+                startActivity(intent);
             }
         });
-
-
     }
 }

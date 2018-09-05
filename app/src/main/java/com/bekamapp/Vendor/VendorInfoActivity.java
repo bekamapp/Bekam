@@ -140,17 +140,19 @@ public class VendorInfoActivity extends AppCompatActivity {
                 String vendor_phone = phone.getText().toString().trim();
                 String vendor_location = location.getText().toString().trim();
 
-                //To add data to database
-                Toast.makeText(getBaseContext(), "Created user: " + firebaseUser.getUid(), Toast.LENGTH_LONG).show();
-                vendor.setID(1);
-                vendor.setName(vendor_name);
-                vendor.setPhone(vendor_phone);
-                vendor.setLocation(vendor_location);
-                vendor.setWorkingHours(getDays(), workingHours[0], workingHours[1]);
-                vendor.setCategory(selectedCategory[0]);
-                reference.child(firebaseUser.getUid()).setValue(vendor);
+                if(!vendor_name.equals("") && !vendor_phone.equals("") && !vendor_location.equals("") && !getDays().isEmpty()) {
+                    //To add data to database
+                    Toast.makeText(getBaseContext(), "User created.", Toast.LENGTH_LONG).show();
+                    vendor.setID(1);
+                    vendor.setName(vendor_name);
+                    vendor.setPhone(vendor_phone);
+                    vendor.setLocation(vendor_location);
+                    vendor.setWorkingHours(getDays(), workingHours[0], workingHours[1]);
+                    vendor.setCategory(selectedCategory[0]);
+                    reference.child(firebaseUser.getUid()).setValue(vendor);
 
-                startActivity(new Intent(VendorInfoActivity.this, MainActivity.class));
+                    startActivity(new Intent(VendorInfoActivity.this, MainActivity.class));
+                }
 
 //                //To get data from database
 //                reference.child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {

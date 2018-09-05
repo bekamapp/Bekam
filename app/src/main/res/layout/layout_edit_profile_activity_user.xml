@@ -64,11 +64,53 @@
             android:layout_height="wrap_content"
             android:layout_weight=".8"
             android:fontFamily="@font/caviardreams"
+            android:textColor="#FAFAFA"
+            android:textColorHint="#FAFAFA"
             android:textSize="15dp"
             android:inputType="textEmailAddress"
             android:enabled="false"
             />
     </LinearLayout>
+
+    <!--Old Password -->
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tvOldpassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:gravity="center_horizontal"
+            android:text="Old Password:"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textColor="#FAFAFA"
+            android:fontFamily="@font/caviardreams"/>
+
+        <EditText
+            android:id="@+id/et_edit_user_oldpassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:textSize="15dp"
+            android:hint=" Enter your old password"
+            android:inputType="textPassword"
+            android:fontFamily="@font/caviardreams"
+            android:textColor="#FAFAFA"
+            android:textColorHint="#FAFAFA"/>
+
+
+    </LinearLayout>
+
+    <!-- New Password -->
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -99,7 +141,9 @@
             android:textSize="15dp"
             android:hint=" Enter new password"
             android:inputType="textPassword"
-            android:fontFamily="@font/caviardreams"/>
+            android:fontFamily="@font/caviardreams"
+            android:textColor="#FAFAFA"
+            android:textColorHint="#FAFAFA"/>
 
 
     </LinearLayout>

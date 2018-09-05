@@ -30,8 +30,8 @@ public class MyProfileActivityUser extends AppCompatActivity {
         setContentView(R.layout.layout_my_profile_activity_user);
 
         listView =(ListView)findViewById(R.id.lv_user_profile);
-        String []content={"My Reviews","Edit My Profile","LogOut"};
-        Adapter adapter = new Adapter(this, content);
+        String []content={"Edit My Profile","LogOut"};
+        UserIconAdapter adapter = new UserIconAdapter(this, content);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -40,12 +40,9 @@ public class MyProfileActivityUser extends AppCompatActivity {
                 switch (position)
                 {
                     case 0:
-                        startActivity(new Intent(MyProfileActivityUser.this, ReviewsActivity.class)); //hn3'yr dy,, hyft7 el reviews bt3to
-                        break;
-                    case 1:
                         startActivity(new Intent(MyProfileActivityUser.this, EditProfileActivityUser.class)); //hn3'er el profile elly hytft7,, ana 3mlah dlw2ty ay 7aga
                         break;
-                    case 2:
+                    case 1:
                         auth = FirebaseAuth.getInstance();
                         auth.signOut();
                         startActivity(new Intent(MyProfileActivityUser.this, MainActivity.class));
